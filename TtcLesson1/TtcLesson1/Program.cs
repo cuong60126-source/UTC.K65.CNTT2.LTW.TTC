@@ -148,7 +148,27 @@
 
             foreach(var student in students)
             {
+                if (student.masv == ma)
+                {
+                    Console.WriteLine("Tim thay sinh vien: ");
+                    Console.WriteLine("Ma sinh vien: " + student.masv);
+                    Console.WriteLine("Ho ten: " + student.hoTen);
+                    Console.WriteLine("Ngay sinh: " + student.ngaySinh);
+                    Console.WriteLine("Gioi tinh: " + student.gioiTinh);
+                    Console.WriteLine("Email: " + student.email);
+                    Console.WriteLine("Sdt: " + student.sdt);
+                    Console.WriteLine("Nganh hoc: " + student.nganhHoc);
+                    Console.WriteLine("Diem trung binh: " + student.dtb);
+                    Console.WriteLine("Trang thai: " + student.trangThai);
 
+                    timThay = true;
+                    break;
+                }
+            }
+
+            if(timThay != true)
+            {
+                Console.WriteLine("Khong tim thay sinh vien co ma: " + ma);
             }
         }
     }
