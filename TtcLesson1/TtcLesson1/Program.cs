@@ -65,9 +65,11 @@
                         break;
                     case "12":
                         //Thong ke sinh vien theo nghanh
+                        ThongKeSinhVienTheoNghanh(students);
                         break;
                     case "13":
                         //Thong ke sinh vien theo trang thai
+                        ThongKeSinhVienTheoTrangThai(students);
                         break;
                     case "14":
                         Console.WriteLine("Ban da ket thuc chuc nang");
