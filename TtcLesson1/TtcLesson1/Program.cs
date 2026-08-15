@@ -371,5 +371,50 @@
             dtb = dtb / students.Count;
             Console.WriteLine("Diem trung binh: " + dtb);
         }
+
+        static void ThongKeSinhVienTheoNghanh(List<Student> students)
+        {
+            Dictionary<string, int> thongKe = new Dictionary<string, int>();
+
+            foreach(var student in students)
+            {
+                if(thongKe.ContainsKey(student.nganhHoc))
+                {
+                    thongKe[student.nganhHoc]++;
+                }
+                else
+                {
+                    thongKe.Add(student.nganhHoc, 1);
+                }
+            }
+
+            Console.WriteLine("Thong ke sinh vien theo nghanh");
+
+            foreach(var item in thongKe)
+            {
+                Console.WriteLine("Nghanh: " + item.Key + " - So sinh vien: " + item.Value);
+            }
+        }
+
+        static void ThongKeSinhVienTheoTrangThai(List<Student> students)
+        {
+            int dangHoc = 0;
+            int nghiHoc = 0;
+
+            foreach(var student in students)
+            {
+                if(student.trangThai == true)
+                {
+                    dangHoc++;
+                }
+                else
+                {
+                    nghiHoc++;
+                }
+            }
+
+            Console.WriteLine("Dang hoc: " + dangHoc);
+            Console.WriteLine("Nghi hoc: " + nghiHoc);
+        }
     }
 }
