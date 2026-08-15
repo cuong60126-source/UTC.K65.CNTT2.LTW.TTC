@@ -33,6 +33,7 @@
                         break;
                     case "4":
                         //Tim gan dung ho ten
+                        TimGanDungHoTen(students);
                         break;
                     case "5":
                         //Cap nhat sinh vien
@@ -169,6 +170,38 @@
             if(timThay != true)
             {
                 Console.WriteLine("Khong tim thay sinh vien co ma: " + ma);
+            }
+        }
+
+        static void TimGanDungHoTen(List<Student> students)
+        {
+            Console.WriteLine("Nhap ho ten can tim: ");
+            string ten = Console.ReadLine();
+
+            bool timThay = false;
+
+            foreach(var student in students)
+            {
+                if(student.hoTen.Contains(ten, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Tim thay sinh vien");
+                    Console.WriteLine("Ma sinh vien: " + student.masv);
+                    Console.WriteLine("Ho ten: " + student.hoTen);
+                    Console.WriteLine("Ngay sinh: " + student.ngaySinh);
+                    Console.WriteLine("Gioi tinh: " + student.gioiTinh);
+                    Console.WriteLine("Email: " + student.email);
+                    Console.WriteLine("Sdt: " + student.sdt);
+                    Console.WriteLine("Nganh hoc: " + student.nganhHoc);
+                    Console.WriteLine("Diem trung binh: " + student.dtb);
+                    Console.WriteLine("Trang thai: " + student.trangThai);
+
+                    timThay = true;
+                }
+            }
+
+            if(timThay != true)
+            {
+                Console.WriteLine("Khong tim thay sinh vien");
             }
         }
     }
