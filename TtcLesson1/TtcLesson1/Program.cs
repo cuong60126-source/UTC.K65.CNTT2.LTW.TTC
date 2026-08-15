@@ -37,24 +37,31 @@
                         break;
                     case "5":
                         //Cap nhat sinh vien
+                        CapNhatSinhVien(students);
                         break;
                     case "6":
                         //Xoa sinh vien
+                        XoaSinhVien(students);
                         break;
                     case "7":
                         //Sap xep theo sinh vien
+                        SapXepTheoHoTen(students);
                         break;
                     case "8":
                         //Sap xep theo diem trung binh
+                        SapXepTheoDiemTrungBinh(students);
                         break;
                     case "9":
                         //Hien thi sinh vien co diem 8 tro len
+                        HienThiSinhVienTren8(students);
                         break;
                     case "10":
                         //Hien thi sinh vien co diem cao nhat
+                        HienThiSinhVienTop(students);
                         break;
                     case "11":
                         //Tinh diem trung binh sinh vien
+                        TinhDiemTrungBinh(students);
                         break;
                     case "12":
                         //Thong ke sinh vien theo nghanh
@@ -203,6 +210,166 @@
             {
                 Console.WriteLine("Khong tim thay sinh vien");
             }
+        }
+
+        static void CapNhatSinhVien(List<Student> students)
+        {
+            Console.WriteLine("Nhap ma sinh vien can cap nhat: ");
+            string ma = Console.ReadLine();
+
+            bool timThay = false;
+
+            foreach(var student in students)
+            {
+                if(student.masv == ma)
+                {
+                    Console.WriteLine("Nhap thong tin moi:");
+
+                    Console.Write("Ho ten: ");
+                    student.hoTen = Console.ReadLine();
+
+                    Console.Write("Ngay sinh: ");
+                    student.ngaySinh = DateTime.Parse(Console.ReadLine());
+
+                    Console.Write("Gioi tinh (true/false): ");
+                    student.gioiTinh = bool.Parse(Console.ReadLine());
+
+                    Console.Write("Email: ");
+                    student.email = Console.ReadLine();
+
+                    Console.Write("So dien thoai: ");
+                    student.sdt = Console.ReadLine();
+
+                    Console.Write("Nganh hoc: ");
+                    student.nganhHoc = Console.ReadLine();
+
+                    Console.Write("Diem trung binh: ");
+                    student.dtb = float.Parse(Console.ReadLine());
+
+                    Console.Write("Trang thai hoc tap (true/false): ");
+                    student.trangThai = bool.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Cap nhat sinh vien thanh cong!");
+
+                    timThay = true;
+                    break;
+                }
+            }
+
+            if(timThay != true)
+            {
+                Console.WriteLine("Khong tim thay sinh vien co ma: " + ma);
+            }
+        }
+
+        static void XoaSinhVien(List<Student> students)
+        {
+            Console.WriteLine("Nhap ma sinh vien can xoa: ");
+            string ma = Console.ReadLine();
+
+            bool timThay = false;
+
+            foreach(var student in students)
+            {
+                if(student.masv == ma)
+                {
+                    students.Remove(student);
+                    Console.WriteLine("Xoa sinh vien thanh cong!");
+                    timThay = true;
+                    break;
+                }
+            }
+
+            if(timThay != true)
+            {
+                Console.WriteLine("Khong tim thay sinh vien co ma: " + ma);
+            }
+        }
+
+        static void SapXepTheoHoTen(List<Student> students)
+        {
+            students.Sort((sv1, sv2) => sv1.hoTen.CompareTo(sv2.hoTen));
+            Console.WriteLine("Da sap xep thanh cong");
+            HienThiThongTin(students);
+        }
+
+        static void SapXepTheoDiemTrungBinh(List<Student> students)
+        {
+            students.Sort((sv1, sv2) => sv1.dtb.CompareTo(sv2.dtb));
+            Console.WriteLine("Da sap xep thanh cong");
+            HienThiThongTin(students);
+        }
+
+        static void HienThiSinhVienTren8(List<Student> students)
+        {
+            bool kiemTra = false;
+            foreach(var student in students)
+            {
+                if(student.dtb > 8)
+                {
+                    Console.WriteLine("Ma sinh vien: " + student.masv);
+                    Console.WriteLine("Ho ten: " + student.hoTen);
+                    Console.WriteLine("Ngay sinh: " + student.ngaySinh);
+                    Console.WriteLine("Gioi tinh: " + student.gioiTinh);
+                    Console.WriteLine("Email: " + student.email);
+                    Console.WriteLine("Sdt: " + student.sdt);
+                    Console.WriteLine("Nganh hoc: " + student.nganhHoc);
+                    Console.WriteLine("Diem trung binh: " + student.dtb);
+                    Console.WriteLine("Trang thai: " + student.trangThai);
+
+                    kiemTra = true;
+                }
+            }
+
+            if(kiemTra != true)
+            {
+                Console.WriteLine("Khong co sinh vien nao co diem trung binh tren 8");
+            }
+        }
+
+        static void HienThiSinhVienTop(List<Student> students)
+        {
+            if(students.Count == 0)
+            {
+                Console.WriteLine("Danh sach khong co sinh vien");
+                return;
+            }
+
+            List<Student> tStudent = new List<Student>(students);
+
+            SapXepTheoDiemTrungBinh(tStudent);
+
+            Student sinhVienTop = tStudent[tStudent.Count - 1];
+
+            Console.WriteLine("Sinh vien co diem cao nhat:");
+            Console.WriteLine("Ma sinh vien: " + sinhVienCaoNhat.masv);
+            Console.WriteLine("Ho ten: " + sinhVienCaoNhat.hoTen);
+            Console.WriteLine("Ngay sinh: " + sinhVienCaoNhat.ngaySinh);
+            Console.WriteLine("Gioi tinh: " + sinhVienCaoNhat.gioiTinh);
+            Console.WriteLine("Email: " + sinhVienCaoNhat.email);
+            Console.WriteLine("Sdt: " + sinhVienCaoNhat.sdt);
+            Console.WriteLine("Nganh hoc: " + sinhVienCaoNhat.nganhHoc);
+            Console.WriteLine("Diem trung binh: " + sinhVienCaoNhat.dtb);
+            Console.WriteLine("Trang thai: " + sinhVienCaoNhat.trangThai);
+        }
+
+        static void TinhDiemTrungBinh(List<Student> students)
+        {
+            if(students.Count == 0)
+            {
+                Console.WriteLine("Danh sach khong co sinh vien");
+                return;
+            }
+
+            float dtb = 0;
+
+            foreach(var student in students)
+            {
+                dtb += student.dtb;
+            }
+
+            dtb = dtb / students.Count;
+            Console.WriteLine("Diem trung binh: " + dtb);
         }
     }
 }
