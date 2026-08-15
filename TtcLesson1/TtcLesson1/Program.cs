@@ -8,8 +8,8 @@
             string choice;
             List<Student> students = new List<Student>()
             {
-                new Student{masv="SV001", hoTen="Chung Trinh", email="chungtrinhj@gmail.com", sdt="0978611889"},
-                new Student{masv="SV002", hoTen="Chach Van Doanh", email="doanh@gmail.com", sdt="0978611889"},
+                new Student{masv="SV001", hoTen="Chung Trinh", email="chungtrinhj@gmail.com", sdt="0978611889", nganhHoc = "CNTT"},
+                new Student{masv="SV002", hoTen="Chach Van Doanh", email="doanh@gmail.com", sdt="0978611889", nganhHoc = "CNTT"},
             };
 
             do
@@ -234,7 +234,7 @@
                     student.ngaySinh = DateTime.Parse(Console.ReadLine());
 
                     Console.Write("Gioi tinh (true/false): ");
-                    student.gioiTinh = bool.Parse(Console.ReadLine());
+                    student.gioiTinh = Console.ReadLine();
 
                     Console.Write("Email: ");
                     student.email = Console.ReadLine();
@@ -344,15 +344,15 @@
             Student sinhVienTop = tStudent[tStudent.Count - 1];
 
             Console.WriteLine("Sinh vien co diem cao nhat:");
-            Console.WriteLine("Ma sinh vien: " + sinhVienCaoNhat.masv);
-            Console.WriteLine("Ho ten: " + sinhVienCaoNhat.hoTen);
-            Console.WriteLine("Ngay sinh: " + sinhVienCaoNhat.ngaySinh);
-            Console.WriteLine("Gioi tinh: " + sinhVienCaoNhat.gioiTinh);
-            Console.WriteLine("Email: " + sinhVienCaoNhat.email);
-            Console.WriteLine("Sdt: " + sinhVienCaoNhat.sdt);
-            Console.WriteLine("Nganh hoc: " + sinhVienCaoNhat.nganhHoc);
-            Console.WriteLine("Diem trung binh: " + sinhVienCaoNhat.dtb);
-            Console.WriteLine("Trang thai: " + sinhVienCaoNhat.trangThai);
+            Console.WriteLine("Ma sinh vien: " + sinhVienTop.masv);
+            Console.WriteLine("Ho ten: " + sinhVienTop.hoTen);
+            Console.WriteLine("Ngay sinh: " + sinhVienTop.ngaySinh);
+            Console.WriteLine("Gioi tinh: " + sinhVienTop.gioiTinh);
+            Console.WriteLine("Email: " + sinhVienTop.email);
+            Console.WriteLine("Sdt: " + sinhVienTop.sdt);
+            Console.WriteLine("Nganh hoc: " + sinhVienTop.nganhHoc);
+            Console.WriteLine("Diem trung binh: " + sinhVienTop.dtb);
+            Console.WriteLine("Trang thai: " + sinhVienTop.trangThai);
         }
 
         static void TinhDiemTrungBinh(List<Student> students)
