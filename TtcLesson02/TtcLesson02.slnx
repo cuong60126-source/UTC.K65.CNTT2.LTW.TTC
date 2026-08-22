@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../TtcLesson2MVC/TtcLesson2MVC.csproj" />
+  <Project Path="TtcLesson02/TtcLesson02.csproj" />
+</Solution>
