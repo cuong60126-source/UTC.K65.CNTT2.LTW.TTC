@@ -1,10 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Trang chủ";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome, Truong Tuan Cuong</h1>
-    <HR/>
-    <p>@ViewBag.name</p>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <!-- Banner -->
+    <div class="mt-3">
+        <img src=                      "https://placehold.co/1000x300?text=Microsoft+Azure"
+            class="img-fluid w-100"
+            alt="Banner" />
+    </div>
+
+    <!-- Danh sách sản phẩm -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="~/images/product1.jpg"
+                class="card-img-top"
+                style="height: 100px; object-fit: contain;"/>
+                <div class="card-body text-center">
+                    <h5>Product name 1</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="~/images/product2.jpg"
+                     class="card-img-top"
+                     style="height: 100px; object-fit: contain;" />
+                <div class="card-body text-center">
+                    <h5>Product name 2</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="~/images/product3.jpg"
+                     class="card-img-top"
+                     style="height: 100px; object-fit: contain;" />
+                <div class="card-body text-center">
+                    <h5>Product name 3</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="~/images/product4.jpg"
+                     class="card-img-top"
+                     style="height: 100px; object-fit: contain;" />
+                <div class="card-body text-center">
+                    <h5>Product name 4</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

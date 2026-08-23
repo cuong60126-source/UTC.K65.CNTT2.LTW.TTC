@@ -1,0 +1,46 @@
+﻿@model List<TtcLesson2MVC.Models.Product>
+
+@ 
+{
+    ViewData["Title"] = "Quản lý sản phẩm";        
+}
+
+<div class = "container mt-4">
+    <h2>Quản lý sản phẩm</h2>
+
+    <table class = "table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Created At</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model) 
+            {
+                <tr>
+                    <td>@product.id</td>
+                    <td>@product.name</td>
+                    <td>@product.price.ToString("N0") đ</td>
+                    <td>@product.createdAt.ToString("dd-MM-yyyy")</td>
+                    <td>
+                        <img src = "@product.Image"
+                            width = "60"
+                            height = "60"
+                            style = "object-fit: contain" />
+                    </td>
+                    <td>
+                        <button class = "btn btn-success btn-sm">
+                            view
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    
+    </table>
+</div>
