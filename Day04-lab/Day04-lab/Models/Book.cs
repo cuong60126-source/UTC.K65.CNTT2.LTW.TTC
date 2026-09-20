@@ -43,6 +43,10 @@ namespace Day04_lab.Models
 
 			return books;
 		}
+		public void AddBook(Book book)
+		{
+			GetBookList().Add(book);
+		}
 		public Book GetBookById(int id)
 		{
 			Book book = this.GetBookList().FirstOrDefault(b => b.id == id);

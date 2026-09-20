@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Day04_lab.Models.Book>
+@{
+	foreach(var item in Model)
+	{
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class="thumbnail">
+				<img src="@item.image" alt="" />
+				<div class="caption">
+					<h3>@item.title</h3>
+					<p>Price: @item.price</p>
+				</div>
+			</div>
+		</div>
+	}
+}
