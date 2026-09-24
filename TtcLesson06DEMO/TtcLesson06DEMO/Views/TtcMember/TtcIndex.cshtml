@@ -1,0 +1,53 @@
+@model IEnumerable<TtcLesson06DEMO.Models.TtcMember>
+
+@{
+    ViewData["Title"] = "TtcIndex";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="TtcCreate">Create New</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TtcMemberUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TtcMemberPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TtcMemberEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TtcMemberFullName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.TtcMemberUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TtcMemberPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TtcMemberEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TtcMemberFullName)
+            </td>
+            <td>
+                <a asp-action="TtcEdit" asp-route-id="@item.TtcMemberId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TtcMemberId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TtcMemberId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

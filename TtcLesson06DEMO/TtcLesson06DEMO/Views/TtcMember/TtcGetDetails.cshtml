@@ -1,0 +1,12 @@
+﻿@model TtcLesson06DEMO.Models.TtcMember
+@{
+	ViewData["Title"] = "Thông tin chi tiết thành viên";
+	//var TtcMember = Model as TtcLesson06DEMO.Models.TtcMember;
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Member Id: @Model.TtcMemberId</p>
+<p>Username: @Model.TtcMemberUserName</p>
+<p>Password: @Model.TtcMemberPassword</p>
+<p>Full name: @Model.TtcMemberFullName</p>
+<p>Email: @Model.TtcMemberEmail</p>

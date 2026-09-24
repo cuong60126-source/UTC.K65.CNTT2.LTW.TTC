@@ -1,0 +1,48 @@
+@model TtcLesson06DEMO.Models.TtcMember
+
+@{
+    ViewData["Title"] = "TtcCreate";
+}
+
+<h1>Create</h1>
+
+<h4>TtcMember</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="TtcCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="TtcMemberUserName" class="control-label"></label>
+                <input asp-for="TtcMemberUserName" class="form-control" />
+                <span asp-validation-for="TtcMemberUserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TtcMemberPassword" class="control-label"></label>
+                <input asp-for="TtcMemberPassword" class="form-control" />
+                <span asp-validation-for="TtcMemberPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TtcMemberEmail" class="control-label"></label>
+                <input asp-for="TtcMemberEmail" class="form-control" />
+                <span asp-validation-for="TtcMemberEmail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TtcMemberFullName" class="control-label"></label>
+                <input asp-for="TtcMemberFullName" class="form-control" />
+                <span asp-validation-for="TtcMemberFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
